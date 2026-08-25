@@ -12,12 +12,12 @@ if __name__=="__main__":
             x = random.uniform(-1,1)
             y = random.uniform(-1,1)
         number_list.append((x,y))
-    histogram, xedge,yedge =np.histogram2d(x=[x[0] for x in number_list],y=[x[1] for x in number_list],density=True)
+    histogram, xedge,yedge =np.histogram2d(x=[x[0] for x in number_list],y=[x[1] for x in number_list],density=True,bins=100)
     fig,ax = plt.subplots(1,2)
     ax[0].hist([x[0] for x in number_list],bins=1000,density = True)
     conditional_list=[]
     for entry in number_list:
-        if entry[1] > -0.05 and entry[1] <0.05:
+        if entry[1] > -0.01 and entry[1] <0.01:
             conditional_list.append(entry[0])
     ax[1].hist(conditional_list,bins=100,density=True)
     plt.show()
