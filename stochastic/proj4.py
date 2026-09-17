@@ -54,7 +54,7 @@ if __name__ == "__main__":
         right_side = np.zeros((250,250),dtype="float64")
         for i in range(0,num_data_points):
             left_side+= np.dot((mnist_data[i,::]-mean).transpose(),Ezn[i].transpose())
-            right_side+= Eznznt[i] +sigma_squared*np.identity(250)*alphas[i]
+            right_side = right_side + (Eznznt[i] +sigma_squared*np.identity(250)*alphas[i])
         W_new = np.dot(left_side,np.linalg.inv(right_side))
 
         #sigma step
