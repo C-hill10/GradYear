@@ -5,7 +5,7 @@ import numpy as np
 
 if __name__=="__main__":
     number_list = []
-    for i in range(0,1000000):
+    for i in range(0,10000000):
         x = random.uniform(-1,1)
         y = random.uniform(-1,1)
         while x**2 + y**2 > 1:
